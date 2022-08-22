@@ -11,7 +11,7 @@ class Person
 
     @age = age
 
-    _parent_permision = parent_permision
+    @parent_permision = parent_permision
   end
 
   private
