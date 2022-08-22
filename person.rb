@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # Parent class for teacher and student
 class Person
   attr_reader :id
