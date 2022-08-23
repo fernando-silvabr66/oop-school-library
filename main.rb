@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require './person'
 require './capitalize_decorator'
 require './trimmer_decorator'

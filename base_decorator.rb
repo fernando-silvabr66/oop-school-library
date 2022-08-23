@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require './nameable'
 
 # Parent class for Trimmer and Capitalize decorators
