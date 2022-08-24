@@ -30,7 +30,7 @@ class Person < Nameable
   def add_rental(book)
     Rental.new(Time.now, book, self)
   end
-  
+
   private
 
   def of_age?
