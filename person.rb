@@ -27,7 +27,6 @@ class Person < Nameable
     @name
   end
 
-
   def add_rental(book)
     Rental.new(Time.now, book, self)
   end
