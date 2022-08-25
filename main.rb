@@ -26,33 +26,33 @@ class Main
   def cases
     case @answer
     when 1
-      list_books
+      print_books
     when 2
-      list_people
+      print_people
     when 3
-      create_people
+      case3
     when 4
-      create_book
+      case4
     when 5
-      create_rental
+      case5
     when 6
-      list_rentals_person
+      case6
     end
   end
 
-  def list_books
+  def print_books
     @app.all_books.each do |book|
       puts("Title: #{book.title} Author: #{book.author}")
     end
   end
 
-  def list_people
+  def print_people
     @app.all_people.each do |person|
       puts("[#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}")
     end
   end
 
-  def create_people
+  def case3
     print('Do you want to create a student (1) or a teacher (2)? [Input the number]:')
     type = gets.chomp.to_i
     print('Age:')
@@ -72,7 +72,7 @@ class Main
     puts("Person created succesfully\n")
   end
 
-  def create_book
+  def case4
     print('Title: ')
     title = gets.chomp
     print('Author: ')
@@ -81,7 +81,7 @@ class Main
     puts('Book created succesfully')
   end
 
-  def create_rental
+  def case5
     puts 'Select a book from the following list by number'
     @app.all_books.each_with_index do |book, index|
       puts("#{index}) Title: #{book.title} Author: #{book.author}")
@@ -98,7 +98,7 @@ class Main
     puts 'Rental created Succesfully'
   end
 
-  def list_rentals_person
+  def case6
     print 'ID of person:'
     id = gets.chomp.to_i
     puts 'Rentals:'
