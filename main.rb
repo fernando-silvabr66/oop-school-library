@@ -41,13 +41,13 @@ class Main
   end
 
   def print_books
-    @app.all_books.each do |book|
+    @app.books.each do |book|
       puts("Title: #{book.title} Author: #{book.author}")
     end
   end
 
   def print_people
-    @app.all_people.each do |person|
+    @app.people.each do |person|
       puts("[#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}")
     end
   end
@@ -83,12 +83,12 @@ class Main
 
   def case5
     puts 'Select a book from the following list by number'
-    @app.all_books.each_with_index do |book, index|
+    @app.books.each_with_index do |book, index|
       puts("#{index}) Title: #{book.title} Author: #{book.author}")
     end
     book_index = gets.chomp.to_i
     puts 'Select a person from the following list by number (not id)'
-    @app.all_people.each_with_index do |person, index|
+    @app.people.each_with_index do |person, index|
       puts("#{index})[#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}")
     end
     person_index = gets.chomp.to_i
