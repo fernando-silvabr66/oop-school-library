@@ -30,29 +30,29 @@ class Main
     when 2
       print_people
     when 3
-      case3
+      add_person
     when 4
-      case4
+      add_book
     when 5
-      case5
+      add_rental
     when 6
-      case6
+      list_rentals
     end
   end
 
   def print_books
-    @app.all_books.each do |book|
+    @app.books.each do |book|
       puts("Title: #{book.title} Author: #{book.author}")
     end
   end
 
   def print_people
-    @app.all_people.each do |person|
+    @app.people.each do |person|
       puts("[#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}")
     end
   end
 
-  def case3
+  def add_person
     print('Do you want to create a student (1) or a teacher (2)? [Input the number]:')
     type = gets.chomp.to_i
     print('Age:')
@@ -72,7 +72,7 @@ class Main
     puts("Person created succesfully\n")
   end
 
-  def case4
+  def add_book
     print('Title: ')
     title = gets.chomp
     print('Author: ')
@@ -81,14 +81,14 @@ class Main
     puts('Book created succesfully')
   end
 
-  def case5
+  def add_rental
     puts 'Select a book from the following list by number'
-    @app.all_books.each_with_index do |book, index|
+    @app.books.each_with_index do |book, index|
       puts("#{index}) Title: #{book.title} Author: #{book.author}")
     end
     book_index = gets.chomp.to_i
     puts 'Select a person from the following list by number (not id)'
-    @app.all_people.each_with_index do |person, index|
+    @app.people.each_with_index do |person, index|
       puts("#{index})[#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}")
     end
     person_index = gets.chomp.to_i
@@ -98,7 +98,7 @@ class Main
     puts 'Rental created Succesfully'
   end
 
-  def case6
+  def list_rentals
     print 'ID of person:'
     id = gets.chomp.to_i
     puts 'Rentals:'

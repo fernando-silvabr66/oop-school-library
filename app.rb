@@ -12,23 +12,11 @@ class App
     @rentals = []
   end
 
-  # List books.
-
-  def all_books
-    @books
-  end
-
-  # List people.
-
-  def all_people
-    @people
-  end
-
   # Create a person (teacher or student).
 
   def create_person(age, name, parent_permision: true, specialization: false)
     person = Teacher.new(age, specialization, name) if specialization
-    person = Student.new(age, name, parent_permision, 0) unless specialization
+    person = Student.new(age, 'None', name, parent_permision: parent_permision) unless specialization
     @people.push(person)
   end
 
