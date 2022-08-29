@@ -16,7 +16,7 @@ class App
 
   def create_person(age, name, parent_permision: true, specialization: false)
     person = Teacher.new(age, specialization, name) if specialization
-    person = Student.new(age, "None", name, parent_permision: parent_permision) unless specialization
+    person = Student.new(age, 'None', name, parent_permision: parent_permision) unless specialization
     @people.push(person)
   end
 
