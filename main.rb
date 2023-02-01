@@ -7,7 +7,7 @@ class Main
   end
 
   def run
-    while @answer != 7
+    while @answer != 6
       puts("
         Please choose an option by entering a number:
         1 - List all books
